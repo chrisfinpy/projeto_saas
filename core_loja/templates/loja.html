@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <h2>Lista de Produtos</h2>
+
+    <table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in produtos %}
+                <tr>
+                    <td>{{ p.nome }}</td>
+                    <td>R$ {{ p.preco }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="2">Nenhum produto cadastrado ainda.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
